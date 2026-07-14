@@ -1,0 +1,90 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-cream: #F9F8F5;
+  --color-cream-dark: #F3F1EC;
+  --color-ink: #1A1A18;
+  --color-ink-soft: #4A4842;
+  --color-muted: #8B887F;
+  --color-border-warm: #E8E5DD;
+  --color-coral: #D97757;
+  --color-coral-dark: #C25E3E;
+  --color-coral-light: #F4DDD2;
+  --color-teal: #2D5B57;
+  --color-teal-light: #E0EBE9;
+  --color-amber: #E8A23D;
+  --color-amber-light: #FBEFD8;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Consolas, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #F9F8F5;
+    color: #1A1A18;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgba(217, 119, 87, 0.2);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease both;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes dash {
+    to { stroke-dashoffset: 0; }
+  }
+}
